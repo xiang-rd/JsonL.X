@@ -1,7 +1,5 @@
 # JsonL.X
 
-A local toolbox designed for processing JSON Lines data, providing lightweight, offline-capable utilities for parsing, transforming, and validating structured records in JSON Lines format.
-
 > 专为 macOS 设计的原生 JSON/JSONL 编辑器，支持 Markdown 实时预览
 > 
 > **本地离线运行，所有数据仅保存在您的设备上，不上传到任何服务器**
