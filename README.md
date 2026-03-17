@@ -67,7 +67,7 @@
 3. 点击「仍要打开」，输入系统密码确认即可正常使用
 4. 后续打开无需再次操作
 5. 如果提示“已损坏无法打开”，是因为 macOS 的 Gatekeeper 安全机制会拦截未签名或来自互联网的应用，并非真的文件损坏。该应用作为从互联网下载的应用，会被添加com.apple.quarantine隔离属性，导致被拦截。可使用如下命令移除隔离属性。
-```
+```bash
 # 移除隔离属性
 sudo xattr -rd com.apple.quarantine /Applications/JsonL.X.app
 ```
