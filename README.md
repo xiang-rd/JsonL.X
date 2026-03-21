@@ -1,131 +1,166 @@
 # JsonL.X
 
-> 专为 macOS 设计的原生 JSON/JSONL 编辑器，支持 Markdown 实时预览
-> 
-> **本地离线运行，所有数据仅保存在您的设备上，不上传到任何服务器**
+专业的 JSONL 数据编辑器，为 macOS 而生。
 
-[![macOS](https://img.shields.io/badge/macOS-14.0+-blue)](https://www.apple.com/macos/)
-[![Version](https://img.shields.io/github/v/release/xiang-rd/JsonL.X)](https://github.com/xiang-rd/JsonL.X/releases)
-[![Downloads](https://img.shields.io/github/downloads/xiang-rd/JsonL.X/total)](https://github.com/xiang-rd/JsonL.X/releases)
-[![License](https://img.shields.io/badge/License-Proprietary-yellow)](LICENSE)
+**本地离线运行，所有数据仅保存在您的设备上，不上传到任何服务器**
+
+[![macOS](https://img.shields.io/badge/platform-macOS-blue)](https://www.apple.com/macos/)
+[![Universal](https://img.shields.io/badge/arch-Universal%20Binary-success)](https://support.apple.com/en-us/HT211861)
+[![Download](https://img.shields.io/github/v/release/xiang-rd/JsonL.X?include_prereleases&label=download)](https://github.com/xiang-rd/JsonL.X/releases)
 
 ---
-
-## Why do it?
-
-作为一个业务算法同学，每天打交道最多的就是做数据。
-大多数数据都通过jsonlines保存，即每行均可以解析为dict，但该数据格式并不适合人来快速浏览或修改。所以就搞个本地应用，既保证业务数据安装，又能方便更快地干好活，属实是牛马给自己优化了下自己耕地用的犁了。
-
-我自己的主要用途：
-1. summary/generator：标数据/检查数据；
-2. reward/LLM-as-a-judger：字段统计，快速check效果；
 
 ## 功能特性
 
-- **格式支持**：完美支持 `.json` 和 `.jsonl` 格式文件打开/编辑/导出
-- **可视化路径树**：左侧树形结构展示JSON嵌套关系，字段类型直观标注
-- **多字段同时编辑**：支持String/Number/Bool等类型的原生编辑体验
-- **智能实时预览**：Markdown实时渲染、链接一键跳转
-- **字段类型推断**：自动识别字段类型并显示标签，编辑更安全
-- **最近文件记忆**：自动保存最近打开文件列表，恢复上次勾选状态
-- **全键盘操作**：支持快捷键快速切换条目、跳转、导出等操作
-- **安全导出**：导出修改后的文件自动添加时间戳，不覆盖原文件
+- **本地处理**：所有数据本地处理，不上传云端，保障隐私安全
+- **多格式导入**：支持 JSONL、JSON、CSV、Excel (.xlsx) 一键导入
+- **可视化编辑**：左侧字段树导航，中间表单化编辑，右侧实时预览
+- **智能字段识别**：自动检测字段类型（String/Number/Bool），自动类型转换
+- **字段统计分析**：数值统计（最小/最大/平均）、字符串频次分布、联合统计
+- **灵活导出**：导出为 JSONL、CSV，支持选择字段、自定义范围
+- **高效导航**：支持条目跳转、快捷键切换、最近文件记忆
 
 ---
 
-## 应用截图
+## 适用场景
 
-*(TODO：截图待添加)*
+| 场景 | 说明 |
+|------|------|
+| **LLM 训练数据准备** | 编辑、清洗、转换大模型微调所需的 JSONL 格式训练数据 |
+| **数据标注与管理** | 管理标注结果，批量编辑字段值，导出不同格式 |
+| **日志分析** | 查看结构化日志文件，按字段筛选，统计分析 |
+| **数据迁移** | Excel/CSV 与 JSONL 之间的格式互转 |
+
+---
+
+## 界面预览
+
+> TODO: 添加应用截图
+
+主界面采用三栏布局：字段树 | 编辑器 | 预览
 
 ---
 
 ## 系统要求
 
-- macOS 14.0 (Ventura) 或更高版本
-- 支持 Apple Silicon（M系列）和 Intel 芯片 Mac
-- 至少 10MB 可用磁盘空间
+- **操作系统**：macOS 14.0 (Sonoma) 或更高版本
+- **芯片架构**：支持 Intel 和 Apple Silicon (Universal Binary)
+- **存储空间**：约 50MB
 
 ---
 
-## 下载安装
+## 安装说明
 
-### 官方安装方式：下载 DMG 安装包
-本项目仅通过 GitHub Releases 发布官方 DMG 安装包，不支持其他安装方式。
+### 下载
 
-1. 前往 [Releases 页面](https://github.com/xiang-rd/JsonL.X/releases) 下载最新版本的 `JsonLX.dmg`
-2. 双击打开下载的 `JsonLX.dmg`
-3. 将 `JsonL.X.app` 拖拽到 `Applications` 文件夹即可完成安装
+前往 [GitHub Releases](https://github.com/xiang-rd/JsonL.X/releases) 下载最新版本的 DMG 文件。
 
----
+### 安装
 
-## 首次运行指南
+1. 双击下载的 `JsonLX-YYYYMMDD.dmg` 文件
+2. 将 **JsonL.X** 拖拽到 **Applications** 文件夹
+3. 推出 DMG，从启动台或应用程序文件夹打开
 
-由于应用未进行苹果开发者签名，首次打开可能会提示「无法打开，因为无法验证开发者」，请按照以下步骤操作：
+### 首次打开
 
-1. 打开「系统设置」→「隐私与安全性」
-2. 下拉到「安全性」部分，会看到提示「已阻止使用JsonL.X，因为来自身份不明的开发者」
-3. 点击「仍要打开」，输入系统密码确认即可正常使用
-4. 后续打开无需再次操作
-5. 如果提示“已损坏无法打开”，是因为 macOS 的 Gatekeeper 安全机制会拦截未签名或来自互联网的应用，并非真的文件损坏。该应用作为从互联网下载的应用，会被添加com.apple.quarantine隔离属性，导致被拦截。可使用如下命令移除隔离属性。
-```bash
-# 移除隔离属性
-sudo xattr -rd com.apple.quarantine /Applications/JsonL.X.app
-```
+由于应用使用 Ad-hoc 签名，首次打开时 macOS 会提示"无法验证开发者"。
+
+**解决方法**：系统设置 → 隐私与安全性 → 安全性 → 点击"仍要打开"
+
+只需操作一次，后续可正常双击打开。
 
 ---
 
-## 快速使用
+## 快速开始
 
-1. **打开文件**：点击「打开文件」按钮或按 `⌘O` 选择 JSON/JSONL 文件
-2. **选择编辑字段**：在左侧路径树中勾选需要编辑的字段
-3. **编辑内容**：在中间编辑器面板修改对应字段值，支持Markdown语法
-4. **预览效果**：右侧面板实时预览Markdown渲染和链接效果
-5. **切换条目**：使用工具栏导航按钮或按 `⌘↑`/`⌘↓` 切换JSONL条目
-6. **保存/导出**：按 `⌘S` 保存修改，或按 `⌘E` 导出为新文件
+### 打开文件
+
+- 启动应用后，点击「打开」按钮或拖拽文件到窗口
+- 支持格式：`.jsonl` `.json` `.csv` `.xlsx`
+- Excel 文件会自动识别工作表，可选择特定 Sheet 导入
+
+### 基本操作
+
+1. **浏览数据**：使用 ⌘↑ / ⌘↓ 或工具栏按钮切换上/下一条目
+2. **选择字段**：在左侧字段树中勾选需要编辑的字段
+3. **编辑内容**：在中间编辑面板修改字段值，类型自动保持
+4. **实时预览**：右侧预览面板显示原始 JSON 和 Markdown 渲染
+5. **保存导出**：⌘S 保存修改，⌘E 导出为 JSONL 或 CSV
 
 ---
 
-## 快捷键列表
+## 快捷键
 
 | 快捷键 | 功能 |
 |--------|------|
-| `⌘O` | 打开文件 |
-| `⌘S` | 保存当前文件 |
-| `⌘E` | 导出为新文件 |
-| `⌘W` | 关闭当前窗口 |
-| `⌘Q` | 退出应用 |
-| `⌘↑` / `⌘↓` | 上一条/下一条JSONL条目 |
-| `⌘G` | 跳转到指定条目 |
-| `⌘B` | 显示/隐藏侧边栏路径树 |
+| ⌘O | 打开文件 |
+| ⌘W | 关闭文件（有文件时）/ 最小化窗口（无文件时） |
+| ⌘S | 保存修改 |
+| ⌘E | 导出为 JSONL |
+| ⌘⇧E | 导出为...（选择格式和字段） |
+| ⌘↑ / ⌘↓ | 上一条目 / 下一条目 |
+| ⌘G | 跳转到指定条目 |
+| ⌘B | 切换侧边栏显示/隐藏 |
+| ⌘⇧D | 字段统计分析 |
+| ⌘Q | 退出应用（按两次确认） |
 
 ---
 
-## 常见问题
+## 字段统计
 
-### Q: 编辑会修改原文件吗？
-A: 默认保存会修改原文件，建议使用「导出」功能生成新文件，避免意外覆盖。
+支持对选中字段进行统计分析：
 
-### Q: 会上传我的文件内容吗？
-A: 绝对不会。JsonL.X是完全本地运行的应用，所有数据仅保存在您的设备上，不会上传到任何服务器。
+- **数值字段**：最小值、最大值、平均值、中位数、标准差、直方图
+- **字符串字段**：唯一值数量、平均长度、Top 20 频次分布
+- **布尔字段**：True/False 占比、饼图展示
+- **联合统计**：分析两个字段的关联分布
 
-### Q: 支持大文件吗？
-A: 目前测试300MB/3000行的JSONL文件基本秒开，更大文件还没尝试，建议拆分后使用。
-
-### Q: 可以提交反馈吗？
-A: 欢迎通过Issue提交使用反馈和问题报告，我们会定期查看处理。
-
----
-
-## 隐私说明
-
-JsonL.X 严格保护用户隐私：
-- 无网络请求，不会上传任何用户数据
-- 仅在本地读取和写入您选择的文件
-- 不会收集任何使用统计信息
-- 不会在您的设备上存储任何额外数据，除了最近打开文件列表（仅保存文件路径）
+按 ⌘⇧D 或在菜单中选择「分析 → 字段统计」打开统计面板。
 
 ---
 
 ## 更新日志
 
-完整更新日志请查看 [Releases 页面](https://github.com/xiang-rd/JsonL.X/releases)。
+详见 [GitHub Releases](https://github.com/xiang-rd/JsonL.X/releases)
+
+### 最新版本
+
+**v1.0.0** - 初始发布
+- 支持 JSONL/CSV/Excel 导入
+- 可视化编辑与预览
+- 字段统计分析
+- 多格式导出
+
+---
+
+## 问题反馈
+
+如果你遇到任何问题或有功能建议，欢迎通过以下方式反馈：
+
+- [GitHub Issues](https://github.com/xiang-rd/JsonL.X/issues)
+- 邮件：xiang-rd@example.com
+
+反馈时建议提供：
+- macOS 版本
+- 应用版本
+- 问题描述和复现步骤
+- 相关截图（如有）
+
+---
+
+## 许可证
+
+Copyright © 2026 xiang-rd.
+
+GitHub: [github.com/xiang-rd/JsonL.X](https://github.com/xiang-rd/JsonL.X)
+
+All rights reserved.
+
+---
+
+## 小贴士
+
+- 文件加载时显示进度提示，可随时取消
+- 勾选字段的顺序会影响导出 CSV 时的列顺序
+- 编辑时类型会自动保持，输入 `"true"` 会存储为布尔值 `true`
+- 最近打开的文件会自动记忆勾选的字段状态
