@@ -35,7 +35,7 @@
 
 ## 界面预览
 
-> TODO: 添加应用截图
+<img width="3716" height="2100" alt="screenshot-20260321-131443" src="https://github.com/user-attachments/assets/4bacce7b-9709-416b-899a-66a09ed77ea3" />
 
 主界面采用三栏布局：字段树 | 编辑器 | 预览
 
