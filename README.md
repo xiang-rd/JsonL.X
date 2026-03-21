@@ -138,7 +138,6 @@
 如果你遇到任何问题或有功能建议，欢迎通过以下方式反馈：
 
 - [GitHub Issues](https://github.com/xiang-rd/JsonL.X/issues)
-- 邮件：xiang-rd@example.com
 
 反馈时建议提供：
 - macOS 版本
